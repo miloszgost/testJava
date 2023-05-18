@@ -1,23 +1,25 @@
-import java.util.*;
-
 
 public class Main {
 
-    public static void message(String inp) {
-        System.out.println("---The message method appears!---");
-        System.out.println("Message: " + inp);
+    // CODE EXAMPLE VALID FOR COMPILING
+    public static void main(String[] args) {
+        System.out.println(withoutT("tHit"));
+        System.out.println(withoutT("tHi"));
+        System.out.println(withoutT("Htit"));
+        System.out.println(withoutT("Thwart"));
+        System.out.println(withoutT("Fort"));
+        System.out.println(withoutT("Timber"));
     }
 
-    public static void main(String[] args) {
-        SortedSet<Integer> newSet = new TreeSet<>();
-        Integer[] contents = {10, 2, 67, 69, 34, 21, 37};
-        for(Integer element: contents){
-            newSet.add(element*2);
-            System.out.println(newSet);
+    public static String withoutT(String in){
+        String result = in;
+        if ( result.startsWith("t") || result.startsWith("T") ) {
+            result = in.substring(1);
         }
-        System.out.print("Compared to original contents: ");
-        System.out.println(Arrays.stream(contents).toList());
-        // metoda 'static' nie wymaga utworzenia obiektu klasy
-        message("Witam bardzo serdecznie");
+        if ( result.endsWith("t") || result.endsWith("T") ) {
+            result = result.substring(0, result.length() - 1);
+        }
+
+        return result;
     }
 }
