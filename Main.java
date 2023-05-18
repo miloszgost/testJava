@@ -1,6 +1,9 @@
 
 public class Main {
-
+    /*
+        Make a method where a string is cut of the letter 't'
+        if it is in the beginning or the end of the string.
+     */
     // CODE EXAMPLE VALID FOR COMPILING
     public static void main(String[] args) {
         System.out.println(withoutT("tHit"));
